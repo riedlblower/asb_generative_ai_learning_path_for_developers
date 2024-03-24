@@ -11,10 +11,11 @@ I ran these on a Windows Command Prompt after successful access to AWS via "aws 
 ## Prerequistes 	
 1. python3 is installed.
 2. CLI access to AWS and the Amazon Bedrock Service
-3. Access to Anthropic Claude (for later python scripts)
+3. Access to Anthropic Claude Foundation Model (for later python scripts)
 
-As mentioned above the earlier python scripts use the Amazon Titan Foundation Model which is rather inexpensive while later python scripts use Anthropic Claude which is more expensive but far more accurate at the time of writing. Access to Anthropic Claude must be requested from within Amazon Bedrock while access to Amazon Titan is allowed by default.
+As mentioned above the later python scripts use Anthropic Claude which is more expensive than Amazon Titan but far more accurate at the time of writing. Access to Anthropic Claude must be requested from within Amazon Bedrock while access to Amazon Titan is allowed by default.
 
-### Unique Selling Point: SageMaker is not involved i.e. AWS costs are reduced.
-
-
+### Unique Selling Points
+1. SageMaker is not involved i.e. AWS costs are reduced.
+2. Scripts execute from a CLI so the setup is rather simple.
+3. Scripts can easily be modified subsequently to suit ones own needs.
