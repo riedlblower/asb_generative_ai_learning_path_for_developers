@@ -53,41 +53,6 @@ def get_bedrock_client():
 boto3_bedrock = get_bedrock_client() # configure_environment()
 
 
-#import json
-#import os
-#import sys
-
-#import boto3
-#import botocore
-
-#module_path = ".."
-#sys.path.append(os.path.abspath(module_path))
-#from labutils import bedrock, print_ww
-
-#def print_ww(*args, width: int = 100, **kwargs):
-#    """Like print(), but wraps output to `width` characters (default 100)"""
-#    buffer = StringIO()
-#    try:
-#        _stdout = sys.stdout
-#        sys.stdout = buffer
-#        print(*args, **kwargs)
-#        output = buffer.getvalue()
-#    finally:
-#        sys.stdout = _stdout
-#    for line in output.splitlines():
-#        print("\n".join(textwrap.wrap(line, width=width)))
-
-#bedrock_client = boto3.client(service_name = 'bedrock-runtime')
-
-#os.environ["AWS_DEFAULT_REGION"] = "us-west-2"
-##os.environ["AWS_PROFILE"] = "default"
-##os.environ["BEDROCK_ASSUME_ROLE"] = "<YOUR_ROLE_ARN>"  # E.g. "arn:aws:..."
-
-#boto3_bedrock = bedrock.get_bedrock_client(
-#    assumed_role=os.environ.get("BEDROCK_ASSUME_ROLE", None),
-#    region=os.environ.get("AWS_DEFAULT_REGION", None)
-#)
-
 # create the prompt
 prompt_data = """
 Command: Write an email from Bob, Customer Service Manager, to the customer "John Doe" 
@@ -136,36 +101,3 @@ email = outputText[outputText.index('\n')+1:]
 print_ww(email)
 
 
-
-#output = []
-#try:
-    
-#    response = boto3_bedrock.invoke_model_with_response_stream(body=body, modelId=modelId, accept=accept, contentType=contentType)
-#    stream = response.get('body')
-    
-#    i = 1
-#    if stream:
-#        for event in stream:
- #           chunk = event.get('chunk')
-#            if chunk:
-#                chunk_obj = json.loads(chunk.get('bytes').decode())
-#                text = chunk_obj['outputText']
-#                output.append(text)
-#                print(f'\t\t\x1b[31m**Chunk {i}**\x1b[0m\n{text}\n')
-#                i+=1
-            
-#except botocore.exceptions.ClientError as error:
-    
-#    if error.response['Error']['Code'] == 'AccessDeniedException':
-#           print(f"\x1b[41m{error.response['Error']['Message']}\
-#                \nTo troubeshoot this issue please refer to the following resources.\
-#                 \nhttps://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_access-denied.html\
-#                 \nhttps://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html\x1b[0m\n")
-        
-#    else:
-#        raise error
-		
-		
-#print('\t\t\x1b[31m**COMPLETE OUTPUT**\x1b[0m\n')
-#complete_output = ''.join(output)
-#print(complete_output)
