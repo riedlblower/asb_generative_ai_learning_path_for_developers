@@ -1,6 +1,6 @@
 # asb_generative_ai_learning_path_for_developers
  
-## AWS Skill Builder (https://skillbuilder.aws
+## AWS Skill Builder (https://skillbuilder.aws)
 
 ## Learning Plan: Generative AI Learning Path for Developers (free course)
 
